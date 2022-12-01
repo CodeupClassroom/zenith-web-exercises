@@ -1,3 +1,4 @@
+console.log('Running while.js');
 // Create a while loop that uses console.log() to create the output shown below.
 // 2
 // 4
@@ -15,6 +16,7 @@
 // 16384
 // 32768
 // 65536
+
 
 
 // Do-While
