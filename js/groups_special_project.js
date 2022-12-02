@@ -43,7 +43,7 @@ function createGroups (input) {
         console.log('You called the createGroups function with malformed parameters');
         return;
     }
-    if (typeof(input.class) !== 'object') {
+    if (!Array.isArray(input.class)) {
         console.log('Adding a class: [array] is required.');
         return;
     }
@@ -65,7 +65,7 @@ function createGroups (input) {
         let endPosition = options.size * (j + 1);
         let group = options.class.slice(startPosition, endPosition);
         //console.log(group);
-        if (group.length == options.size) {
+        if (group.length === options.size) {
             groupsArr.push(group);
         } else {
             remainingArr = group;
@@ -94,7 +94,7 @@ function shuffle(array) {
     let currentIndex = array.length,  randomIndex;
 
     // While there remain elements to shuffle.
-    while (currentIndex != 0) {
+    while (currentIndex !== 0) {
 
         // Pick a remaining element.
         randomIndex = Math.floor(Math.random() * currentIndex);
