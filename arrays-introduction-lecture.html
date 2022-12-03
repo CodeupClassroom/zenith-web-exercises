@@ -43,7 +43,6 @@
 
 // empty arrays may be declared...
 
-
     // let pies = [];
     // console.log(pies);
 
@@ -63,14 +62,24 @@
         "Vivian"
     ];
 
+    // let lastIndex = students.length - 1;
+
+    // console.log(students[lastIndex]);
+
+
+    // console.log(students[1, 5]);
+
+    // students[0] = 'William';
+    // console.log(students);
+
 
     // 3
 
-    console.log(students[students.length - 1]);
-
-
-
-    console.log(students[100]);
+    // console.log(students[students.length - 1]);
+    //
+    //
+    //
+    // console.log(students[100]);
 
 
 
@@ -85,6 +94,8 @@
     // let pies = [];
     // pies[0] = "apple";
     // pies[1] = "cherry";
+    // pies[10] = 'vanilla';
+    // console.log(pies);
 
 
 
@@ -113,8 +124,7 @@
 
 // ============================= Accessing Array Elements
 
-// console.log(pies[100]);
-// console.log(pies[3]);
+
 
 // ============================= !! MINI-EXERCISE 1 !!
 
@@ -123,6 +133,28 @@
     2. Practice console logging each classmate separately.
     3. Reassign the second element to be the string "Justin".
  */
+
+// const classmates = ['Javier', 'Isaac', 'Jason'];
+// console.log(classmates[0]);
+// classmates[1] = 'Justin'
+// console.log(classmates);
+
+
+// write a program that allows the user to enter 10 grocery items
+
+// const grocerItems = [];
+//
+// for (let i = 0; i < 5; i += 1) {
+//     grocerItems[i] = prompt("Enter grocery item");
+// }
+//
+// console.log(grocerItems);
+
+
+
+
+
+
 
 // ============================= For Loop
 
@@ -142,7 +174,31 @@
 
 // example
 
-    // let pies = ["apple", "cherry", "key lime", "huckleberry"];
+    let pies = ["apple", "cherry", "key lime", "huckleberry"];
+            //  0        1          2            3               4 undefined
+    // for (let i = 0; i < pies.length; i += 1) {
+    //     console.log(i);
+    //     console.log(pies[i]);
+    // }
+
+
+    // for (let i = pies.length; i >= 0; i -= 1) {
+    //     console.log(pies[i]);
+    // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     // console.log(pies);
     //
@@ -189,6 +245,74 @@
     }
 
  */
+
+
+
+// const names = ['Justin', 'Isaac', 'Jason', 'Javier', 'Laura'];
+//
+// function logName(name) {
+//     console.log(name);
+// }
+
+// Anonymous Function
+// names.forEach(function(name) {
+//     console.log(name);
+// });
+
+// Named Function
+// names.forEach(logName);
+
+
+
+
+
+
+
+
+
+// const numbers = [1, 2, 3, 4, 5];
+//
+//
+// function logEvenOddMessage(number) {
+//     let isEvenMsg = (number % 2 === 0) ? 'even' : 'odd';
+//     console.log(isEvenMsg);
+// }
+//
+// numbers.forEach(logEvenOddMessage);
+//
+// numbers.forEach(function(number) {
+//     let isEvenMsg = (number % 2 === 0) ? 'even' : 'odd';
+//     console.log(isEvenMsg);
+// });
+
+
+
+
+
+
+
+// const numbers = [3, 2, 4];
+// let total = 0;
+// numbers.forEach(function(number){
+//     total += number;
+// });
+// console.log(total);
+
+
+
+
+
+
+
+
+
+
+
+// function () {
+//
+// }
+//
+// () => {...}
 
 
 // standard syntax
@@ -258,15 +382,141 @@
 // ============================= !! MINI-EXERCISE 2 !!
 
 /*
-    1. Loop through your classmates array with a for loop.
-    2. Loop through your classmates array with a forEach loop.
+    1. Loop through your classmates array with a for loop to log each classmate.
+    2. Loop through your classmates array with a forEach loop to log each classmate.
  */
+
+const classmates = ['Javier', 'Isaac', 'Jason', 'Vivian', 'Sophia'];
+
+// for (let i = 0; i < classmates.length; i += 1) {
+//     console.log(classmates[i]);
+// }
+
+// classmates.forEach(function(classmate) {
+//     console.log(classmate);
+// });
+
+// classmates.forEach((classmate) => {
+//     console.log(classmate);
+// });
+
+
+
+
+
+
+
 
 // ============================= ARRAYS AND FUNCTIONS EXAMPLES
 
 // !! Write a function, logNums, that takes in an array and logs each number in the array !!
+
+
+
 // !! Write a function, returnLongString, that takes in an array of strings and returns all strings concatenated together !!
+
+
 // !! Write a function, returnArrSum, that takes in an array of values and returns the sum of all number elements !!
+
+
+
+
+
+
+// !! Write a function, logNums, that takes in an array and logs each number in the array !!
+    // const arr = [1, 2, 3, 4, 5];
+    // const arr1 = [1, 2, 8, 4, 2];
+    //
+    // function logNums(input) {
+    //     arr.forEach(function(input){
+    //         console.log(input);
+    //     });
+    // }
+    // logNums(arr);
+    // console.log('=============');
+    // logNums(arr1);
+
+// !! Write a function, returnLongString, that takes in an array of strings and returns all strings concatenated together !!
+
+// const arrStrings = ['apple', 'toast', 'cats', 'dogs'];
+// function returnLongString(arr) {
+//     // let stringClump = '';
+//     // for (let i = 0; i < arr.length; i += 1) {
+//     //     stringClump += arr[i];
+//     // }
+//      return arr.join('');
+//     // return stringClump;
+// }
+// console.log(returnLongString(arrStrings));
+
+
+// !! Write a function, returnArrSum, that takes in an array of values and returns the sum of all number elements !!
+//***USING (for-Loop)
+    // const array = [1, 2, 3, 4, 10];
+    //
+    // function returnArrSum(arr) {
+    //     let sum = 0;
+    //     for(let i = 0; i < arr.length; i += 1) {
+    //         sum += arr[i];
+    //     }
+    //     return sum;
+    // }
+    //
+    // console.log(returnArrSum(array));
+    // console.log(returnArrSum(array));
+
+//***USING (forEach)
+// function returnArrSum(arr) {
+//     let sum = 0;
+//     array.forEach(function(value) {
+//         sum += value;
+//     });
+//     console.log(sum);
+// }
+
+// for(let i = 0; i < arr.length; i += 1) {
+//     sum += arr[i];
+// }
+// array.forEach((value) => {
+//     sum += value;
+// });
+
+// ======================= ARRAY BONUSES
+// 1. Create an array of 10 foods. Write using a for loop, write logic that will log only the foods that start with a vowel. Write another solution using a forEach loop.
+
+
+const foods = [
+    'pie',
+    'pizza',
+    'tortas',
+    'tacos',
+    'pringles',
+    'chips',
+    'eggs', // vowel
+    'pineapple',
+    'apple', // vowel
+    'hamburger'
+];
+
+for (let i = 0; i < foods.length; i += 1) {
+    let firstChar = foods[i][0];
+    let vowels = ['a', 'e', 'i', 'o', 'u'];
+    if (vowels.includes(firstChar)) {
+        console.log(foods[i]); // if the first char is a vowel
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </script>
