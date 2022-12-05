@@ -37,13 +37,14 @@
 
 // push
 
+    // console.log(pies);
     // pies.push('Vanilla');
     // console.log(pies);
 
 // pop
 
     // console.log(pies);
-    // var x = pies.pop();
+    // const x = pies.pop();
     // console.log(x);
     // pies.pop();
     // console.log(pies);
@@ -73,6 +74,17 @@
     Console log the result and verify you get ['March', 'April', 'May', 'June']
  */
 
+// const months = ['April', 'May', 'June'];
+//
+// months.push('July');
+// console.log(months);
+// months.unshift('March');
+// console.log(months);
+// months.pop();
+// console.log(months);
+
+
+
 
 // ============================= Slicing
 
@@ -91,28 +103,39 @@
 //     "cherry",
 //     "key lime",
 //     "huckleberry",
-//     "rhubarb"
+//     "rhubarb",
+//     "vanilla",
+//     "blueberry",
+//     "apple 2",
+//     "cherry 2"
 // ];
 
-// console.log(pies.slice(0, 2));
+// const firstTwoPies = pies.slice(0, 2);
+// console.log(firstTwoPies);
+
+// console.log(pies.slice(2));
 
 
 // ** create a function that takes in an array of pies baked and return the 3 most recently baked pies
 
-
+// function threeMostRecentPies(pies) {
+//     return pies.slice(pies.length - 3);
+// }
+// //
+// console.log(threeMostRecentPies(pies));
+// console.log(pies);
 
 
 // ============================= Copying Array Values
 
 // const x = [1, 2, 3];
 // const y = x;
-// const z = y;
-// console.log(x)
-// console.log(y)
-// x.push(4);
+//
+// y.push(4);
+//
 // console.log(x);
 // console.log(y);
-// console.log(z);
+
 
 
 // Copies the array values
@@ -134,15 +157,26 @@
 //     "cherry",
 //     "huckleberry"
 // ];
+
+// const sortedPies = pies
+//     .slice()
+//     .sort();
 //
+// console.log(pies);
+// console.log(sortedPies);
 
 
-// pies.sort(); // change the original value
+
 // console.log(pies);
 
 // custom sorting: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 
-// const numbers = [1, 11, 2, 5];
+// const numbers = [11, 1, 2, 5];
+//
+// numbers.sort();
+// console.log(numbers);
+//
+//
 // function compareNumbers(a, b) {
 //     return a - b;
 // }
@@ -159,7 +193,16 @@
 //     "rhubarb",
 //     "key lime"
 // ];
+//
+// const reverseAlphaOrder = pies.slice().reverse().sort();
+//
+// console.log(pies);
+// console.log(reverseAlphaOrder);
 
+
+// const reversedPies = pies.slice().reverse();
+// console.log(pies);
+// console.log(reversedPies);
 
 
 // pies.sort().reverse(); // change the original value
@@ -171,12 +214,31 @@
 
 // splitting string into and array
 
-// const names = "Bob,Sally,Mary";
-// const namesArr = names.split(" ");
 // console.log(namesArr);
+//
+//
+// const PI = 3.14;
+//
+// ['3', '14']
+//
+// function returnDecimal(num) {
+//     return Number('.' + String(num).split('.')[1]);
+// }
+//
+// console.log(returnDecimal(PI));
 
-
+// const names = "Bob,Sally,Mary";
+// const namesArr = names.split(",");
+//
+// console.log(namesArr);
+//
+// namesArr.join('');
+//
+// console.log(namesArr);
 // const namesString = namesArr.join("");
+
+// console.log(namesString);
+
 //
 // console.log(namesString);
 
@@ -214,6 +276,43 @@
     6. Log everyone in the row in a single string separated by spaces
     7. Log everyone in the row in a single string separated by underscores
  */
+
+// 1.
+
+    // const names = ['Justin', 'Jason', 'Isaac', 'Cody'];
+
+// 2.
+
+    // names.forEach(function(name) {
+    //     console.log(name);
+    // });
+
+// 3.
+
+    // const reverseAlphaNames = names.slice().sort().reverse();
+
+// 4.
+
+    // reverseAlphaNames.forEach(function(name) {
+    //     console.log(name);
+    // });
+
+
+// 5.
+
+    // const firstTwoNames = names.slice(0, 2);
+    //
+    // firstTwoNames.forEach(function(name) {
+    //     console.log(name);
+    // });
+
+// 6.
+
+    // console.log(names.join(' '));
+
+// 7.
+
+    // console.log(names.join('_'));
 
 
 
