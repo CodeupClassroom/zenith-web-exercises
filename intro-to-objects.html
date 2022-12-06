@@ -34,8 +34,33 @@
   // const cat = {};
   // console.log(typeof cat);
 
+  // const cat = {
+  //   name: 'Garfield',
+  //   age: 7
+  // };
+  //
+  // // console.log(cat);
+  // console.log(cat.name);
+  // console.log(cat.age);
+  //
+  //
+  // cat.color = 'orange';
+  //
+  // cat.age = 8;
+  // console.log(cat);
+
+  // console.log(cat['age']);
+
+
+
+
+
+
 
   // ========== Accessing Properties on an Object
+
+
+
 
   // console.log(pet.givenName);
   // console.log(pet2.givenName);
@@ -67,13 +92,132 @@
 
 
 
-  // !! MINI-EXERCISE 1 !!
+
+  /* !! MINI-EXERCISE 1 !!
+
+    Create a few beverage objects and assign values to each object for the following properties:
+
+    - brandName
+    - type
+    - volumeInLiters
+    - priceInCents
+    - expirationDate
+    - datesOfPreviousSips (use an array of strings)
+    - isOpen
+
+  Define your objects using both literal syntax to create all properties and values at once and also try defining empty objects and assign property values in separate statements using the dot notation.
+
+   */
+
+
+
+  // const drink1 = {
+  //   brandName: "Pepsi",
+  //   type: "Vanilla",
+  //   volumeInLiters: 0.01,
+  //   expirationDate: 29+"th",
+  //   dateOfPreviousSips: [1, 7, 8, 10,'6th'],
+  //   isOpen: "yes"
+  // }
+  // console.log(drink1);
+  // console.log(drink1.isOpen);
+
+
+
+
+
+
+
+
 
 
 
   // Nested Values
 
-  // const pet3 = {
+  // const pets = [
+  //
+  //   {
+  //     name: 'Bowser',
+  //     age: 6,
+  //     species: 'Pug',
+  //     hasOffspring: false,
+  //     valueInDollars: 'priceless',
+  //     altNames: [
+  //       'Bowser Boy',
+  //       'Bowser Man',
+  //       'Bowser Buddy',
+  //       'Puggle Wuggle Boy'
+  //     ],
+  //     vitals: [
+  //       {
+  //         averageTempDegF: 101,
+  //         averageRestingHeartRate: 80,
+  //         isHungry: true,
+  //         date: '2022-12-01'
+  //       },
+  //       {
+  //         averageTempDegF: 99,
+  //         averageRestingHeartRate: 70,
+  //         isHungry: true,
+  //         date: '2022-12-02'
+  //       },
+  //       {
+  //         averageTempDegF: 98,
+  //         averageRestingHeartRate: 100,
+  //         isHungry: false,
+  //         date: '2022-12-03'
+  //       },
+  //       {
+  //         averageTempDegF: 101,
+  //         averageRestingHeartRate: 80,
+  //         isHungry: true,
+  //         date: '2022-12-04'
+  //       }
+  //     ]
+  //   },
+  //   {
+  //     name: 'Pickles',
+  //     age: 6,
+  //     species: 'Pug',
+  //     hasOffspring: false,
+  //     valueInDollars: 'priceless',
+  //     altNames: [
+  //       'Bowser Boy',
+  //       'Bowser Man',
+  //       'Bowser Buddy',
+  //       'Puggle Wuggle Boy'
+  //     ],
+  //     vitals: [
+  //       {
+  //         averageTempDegF: 101,
+  //         averageRestingHeartRate: 80,
+  //         isHungry: true,
+  //         date: '2022-12-01'
+  //       },
+  //       {
+  //         averageTempDegF: 99,
+  //         averageRestingHeartRate: 70,
+  //         isHungry: true,
+  //         date: '2022-12-02'
+  //       },
+  //       {
+  //         averageTempDegF: 98,
+  //         averageRestingHeartRate: 100,
+  //         isHungry: false,
+  //         date: '2022-12-03'
+  //       },
+  //       {
+  //         averageTempDegF: 101,
+  //         averageRestingHeartRate: 80,
+  //         isHungry: true,
+  //         date: '2022-12-04'
+  //       }
+  //     ]
+  //   }
+  //
+  // ]
+
+  // const pet = { // pet.vitals[1].averageTempDegF
   //     name: 'Bowser',
   //     age: 6,
   //     species: 'Pug',
@@ -85,25 +229,43 @@
   //         'Bowser Buddy',
   //         'Puggle Wuggle Boy'
   //     ],
-  //     vitals: {
+  //     vitals: [
+  //       {
   //         averageTempDegF: 101,
   //         averageRestingHeartRate: 80,
-  //         isHungry: true
-  //     }
+  //         isHungry: true,
+  //         date: '2022-12-01'
+  //       },
+  //       {
+  //         averageTempDegF: 99,
+  //         averageRestingHeartRate: 70,
+  //         isHungry: true,
+  //         date: '2022-12-02'
+  //       },
+  //       {
+  //         averageTempDegF: 98,
+  //         averageRestingHeartRate: 100,
+  //         isHungry: false,
+  //         date: '2022-12-03'
+  //       },
+  //       {
+  //         averageTempDegF: 101,
+  //         averageRestingHeartRate: 80,
+  //         isHungry: true,
+  //         date: '2022-12-04'
+  //       }
+  //     ]
   // };
-  // log if Bowser is hungry
-  // console.log(pet3.vitals.isHungry);
-  // // log Bowser's average heartRate
-  // console.log(pet3.vitals.averageRestingHeartRate);
+  // console.log(pet.vitals.averageTempDegF);
   //
-  // // log Bowser's most recent alternative name
-  // console.log(pet3.altNames[pet3.altNames.length - 1]);
-  //
-  // // change age to 7 and isHungry to false
-  // pet3.age = 7;
-  // pet3.vitals.isHungry = false;
-  //
-  // console.log(pet3);
+  // console.log(pet.vitals['isHungry']);
+  // console.log(pet.altNames[1]);
+
+
+
+
+
+  // log and change various property values on the pet object
 
 
 
@@ -113,34 +275,48 @@
   // const pets = [
   //     {
   //         givenName: 'Spot',
-  //         isDog: true
+  //         isDog: true,
+  //         toys: ['rope', 'bone', 'ball']
   //     },
   //     {
   //         givenName: 'Max',
-  //         isDog: false
+  //         isDog: false,
+  //         toys: ['scratch post', 'catnip', 'laser']
   //     },
   //     {
   //         givenName: 'Goldy',
-  //         isDog: false
+  //         isDog: false,
+  //         toys: ['algae', 'bubbles']
   //     }
   // ];
 
-  // change every pet's name to 'Bowser'
-  // pets[0].givenName = "Bowser";
-  // pets[1].givenName = "Bowser";
-  // pets[2].givenName = "Bowser";
-
-  // pets.forEach(function(pet){
-  //     pet.givenName = 'Bowser';
-  // });
-
-
-  // for (const i = 0; i < pets.length; i += 1) {
-  //     pets[i].givenName = 'Bowser';
+  // for (let i = 0; i < pets.length; i += 1) {
+  //   pets[i].givenName = 'Smith';
   // }
+
+  // pets.forEach(function(pet) {
+  //   pet.givenName = 'Bob';
+  // });
+  //
   // console.log(pets);
 
 
+  // log every pet's name (manually, forEach, for loops)
+
+  // for (let i = 0; i < pets.length; i += 1) {
+  //   console.log(pets[i].givenName);
+  // }
+  //
+  // pets.forEach(function(pet) {
+  //   console.log(pet.givenName);
+  // })
+
+  // pets.forEach(function(pet) {
+  //   console.log(pet.toys.join(' '));
+    // pet.toys.forEach(function(toy) {
+    //   console.log(toy);
+    // });
+  // })
 
 
 
@@ -149,6 +325,7 @@
   // console.log(pets[1].givenName);
   // console.log(pets[2].givenName);
 
+  // change every pet's name to 'Bowser' (manually, forEach, for loops)
 
 
 
@@ -174,106 +351,125 @@
   // const pet3 = {
   //     givenName: 'Dog',
   //     ageInYears: 10,
-  //     species: 'Cat',
-  //     favoriteToys: ['Bone', 'Squeeky Pumpkin', 'Rope']
+  //     species: 'Cat'
   // }
   // const pets = [pet1, pet2, pet3];
-  //
-  // console.log(pets[2].favoriteToys[1]);
 
-  // console.log(pet1.givenName);
-  // console.log(pets[0].givenName);
-  // console.log(pets[1].givenName);
-  // console.log(pets[2].givenName);
-
-  // for (const i = 0; i < pets.length; i += 1) {
-  //     console.log(pets[i].givenName);
-  // }
-
-  // pets.forEach(function(pet) {
-  //     console.log(pet.givenName);
-  // });
-
-  // console.log(pet2.givenName);
-  // console.log(pet2.alternativeNames[0] + ' ' + pet2.alternativeNames[2]);
-  // console.log(pet2['givenName']);
-
-  // console.log(pets[1].givenName);
 
 
   // !! MINI EXERCISE 2 !!
-  // const users = [
-  //     {
-  //         givenName: 'Sam',
-  //         age: 21
-  //     },
-  //     {
-  //         givenName: 'Cathy',
-  //         age: 34
-  //     },
-  //     {
-  //         givenName: 'Karen',
-  //         age: 43
-  //     }
-  // ];
 
-  // 1. Log the names of all users in a single console log separated by spaces. // output = "Sam Cathy Karen"
+  const users = [
+      {
+          givenName: 'Sam',
+          age: 21
+      },
+      {
+        givenName: 'Joel Mama',
+        age: 21
+      },
+      {
+          givenName: 'Cathy',
+          age: 34
+      },
+      {
+          givenName: 'Karen',
+          age: 43
+      }
+  ];
 
-  // const output = '';
-  // users.forEach(function(user) {
-  //     output += user.givenName + " ";
-  // });
-  // console.log(output.trim());
-
-  // console.log(users[0].givenName + ' ' + users[1].givenName + ' ' + users[2].givenName);
-
-  // const output;
-  // users.forEach(function(user) {
-  //     output.push(user.givenName);
-  // });
-  // console.log(output.join(' '));
-
-
-
-  // 2. Change the names of all users to "John Doe"
-  // users.forEach(function(user){
-  //     user.givenName = "John Doe";
-  // });
-
-  // console.log(users);
-  // console.log(users[0].age);
-  // users.forEach(function(user) {
-  //     console.log(user.age);
-  // });
-
-  // 3. Increase the current age of all users by 1
-
-  // users[0].age += 1;
-  // users[1].age += 1;
-  // users[2].age += 1;
-
-  // for (const i = 0; i < users.length; i++) {
-  //     users[i].age += 1;
+  // for (let i = 0; i < users.length; i += 1) {
+  //   console.log(users[i].givenName);
   // }
 
   // users.forEach(function(user) {
-  //     user.age += 1;
+  //   console.log(user.givenName);
   // });
-  //
-  //
-  // console.log('====================');
+
+
+
+
+
+
+  // 1. Log the names of all users in a single console log separated by spaces. // output = "Sam Cathy Karen"
+
+    // let names = '';
+    //
+    // users.forEach(function(user) {
+    //   names += user.givenName + ' ';
+    // });
+    //
+    // console.log(names.trim(), "Sam Cathy Karen");
+
+
+  // 2. Change the names of all users to "John Doe"
+
+    // users.forEach(function(user) {
+    //   user.givenName = 'John Doe';
+    // });
+    //
+    // console.log(users);
+
+
+  // 3. Increase the current age of all users by 1
 
   // users.forEach(function(user) {
-  //     console.log(user.age);
+  //   user.age++;
+  // });
+  //
+  // console.log(users);
+
+
+
+  // Extras...
+    // log the total of all the ages
+      // let totalAges = 0;
+      // users.forEach(function(user) {
+      //   totalAges += user.age;
+      // });
+      // console.log(totalAges);
+
+
+    // log the average age of all users
+
+      // let totalAges;
+      //
+      // users.forEach(function(user) {
+      //   totalAges += user.age;
+      // });
+      // console.log(totalAges / users.length);
+
+
+
+  // let youngerUsers = [];
+  //
+  // users.forEach(function(user) {
+  //   if (user.age < 30) {
+  //     youngerUsers.push(user);
+  //   }
+  // });
+  //
+  // console.log(youngerUsers);
+
+
+    // log all the user information in the following format...
+
+  // users.forEach(function(user) {
+  //   console.log(`user: ${user.givenName} | age: ${user.age}`);
   // });
 
-  // console.log(users)
+  // print each user's name if they are older than 30
 
-  // Can you accomplish each step using iteration?
+    // users.forEach(function(user) {
+    //   if (user.age > 30) {
+    //     console.log(user.givenName);
+    //   } else {
+    //     console.log('Hello younger person...' + user.givenName);
+    //   }
+    // });
 
-  // log the total of all the ages
-  // log the average age of all users
-  // log all the user information in the following format...
+
+
 
   /*
       user: Sam | age: 21
@@ -283,81 +479,114 @@
 
   // log the name of the longest given name of a user
 
+  // create longest name variable
+  // loop through users and reassign the name of the current if longer than longest name variable
+
+  // let longestName = '';
+  // users.forEach(function(user) {
+  //   if (user.givenName.length > longestName.length) {
+  //     longestName = user.givenName;
+  //   }
+  // });
+  // console.log(longestName);
 
 
+/*
 
+  -- Mini Exercise 2
 
+  const users = [
+    {
+      givenName: 'Sam',
+      age: 21
+    },
+    {
+      givenName: 'Cathy',
+      age: 34
+    },
+    {
+      givenName: 'Karen',
+      age: 43
+    }
+  ];
 
+  0. Log each given name
+  1. Log the names of all users in a single console log separated by spaces. // output = "Sam Cathy Karen"
+  2. Change the names of all users to "John Doe"
+  3. Increase the current age of all users by 1
+
+*/
 
 
 
   // ========== Getting a List of Object Keys as an Array
 
-  // console.log(Object.keys(pet4));
+  // const pet1 = {
+  //     givenName: 'Freckles',
+  //     ageInYears: 4,
+  //     species: 'Dog'
+  // };
+
+  // console.log(Object.keys(pet1));
+
+
+
+
+
+
+
+
 
 
   // ========== Assigning Functionality to an Object
 
-  // const dog1 = {
-  //     petName: 'Sparky',
-  //     age: 4,
-  //     bark: function() {
-  //         console.log("Woof woof!");
-  //     },
-  //     eat: function(food) {
-  //         console.log('Dog is eating...' + food);
-  //     },
-  //     agePet: function() {
-  //         this.age += 1;
-  //     }
-  // }
-  //
-  // const dog2 = {
-  //     petName: 'Rex',
-  //     age: 2,
-  //     bark: function() {
-  //         console.log("Woof woof!");
-  //     },
-  //     eat: function(food) {
-  //         console.log('Dog is eating...' + food);
-  //     },
-  //     agePet: function() {
-  //         this.age += 1;
-  //     }
-  // }
-  //
-  // const dog3 = {
-  //     petName: 'Dino',
-  //     age: 10,
-  //     bark: function() {
-  //         console.log("Woof woof!");
-  //     },
-  //     eat: function(food) {
-  //         console.log('Dog is eating...' + food);
-  //     },
-  //     agePet: function() {
-  //         this.age += 1;
-  //     }
-  // }
-  //
-  // const dogs = [dog1, dog2, dog3];
-  //
-  // console.log(dogs[0].age);
-  // console.log(dogs[1].age);
-  // console.log(dogs[2].age);
-  //
-  // dogs.forEach(function(dog) {
-  //     dog.agePet();
-  // });
-  //
-  // console.log(dogs[0].age);
-  // console.log(dogs[1].age);
-  // console.log(dogs[2].age);
+  const dog = {
+      petName: 'Sparky',
+      age: 4,
+      bark: function() {
+          console.log("Woof woof!");
+      },
+      eat: function(food) {
+          console.log('Dog is eating...' + food);
+      },
+      agePet: function() {
+          dog.age += 1;
+      }
+  }
 
-
-  // console.log(dog.age);
+  const dog2 = {
+    petName: 'Buddy',
+    age: 4,
+    bark: function() {
+      console.log("Woof woof!");
+    },
+    eat: function(food) {
+      console.log('Dog is eating...' + food);
+    },
+    agePet: function() {
+      this.age += 1;
+    }
+  }
+  // // Sparky
+  // console.log(dog);
   // dog.agePet();
-  // console.log(dog.age);
+  // console.log(dog);
+  //
+  // // Buddy
+  // console.log(dog2);
+  // dog2.agePet();
+  // console.log(dog2);
+
+
+  // console.log(dog);
+
+
+  // dog.bark();
+  // dog.eat('chocolate');
+
+
+
+
 
   // dog.bark();
   // dog.eat('steak');
@@ -369,10 +598,6 @@
   // }
   //
   // dog.sayHello();
-
-
-
-
 
 
 
@@ -391,24 +616,8 @@
   //     setAge: function(age) {
   //         this.age = age;
   //     }
-  //     // addProp: function(name, value) {
-  //     //     this.name = value;
-  //     // }
   // }
 
-  // console.log(user);
-
-  // user.sayHello('Hello, Go!');
-  // user.logAge();
-  // user.getYounger();
-  // user.logAge();
-  // user.setAge(100);
-  // user.logAge();
-  // user.getYounger();
-  // user.logAge();
-
-
-  // console.log(user);
 
 
 
@@ -427,10 +636,6 @@
   // console.log(pet6.age);
   // pet6.getOlder();
   // console.log(pet6.age);
-
-
-  // why use this vs. the object name: https://stackoverflow.com/questions/12799702/javascript-this-versus-object-name
-
 
 
 </script>
