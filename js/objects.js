@@ -11,13 +11,14 @@
      *  > console.log(person.firstName) // "Rick"
      *  > console.log(person.lastName) // "Sanchez"
      */
-    console.log("============== Exercise #1 ==============");
+    console.log('============== Exercise #1 ==============');
     let person = {
         firstName: "Jason",
         lastName: "Merrell"
     }
     console.log(person.firstName);
     console.log(person.lastName);
+
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
@@ -27,11 +28,14 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
-    console.log("\n============== Exercise #2 ==============");
+    console.log('\n============== Exercise #2 ==============');
     person.sayHello = function(){
         return `Hello from ${this.firstName} ${this.lastName}`;
     }
-    console.log(person.sayHello());
+    console.log( person.sayHello() );
+
+    person.middleName = 'Adam';
+    console.log(person);
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -46,7 +50,7 @@
      * represents one shopper. Use a foreach loop to iterate through the array,
      * and console.log the relevant messages for each person
      */
-    console.log("\n============== Exercise #3 ==============");
+    console.log('\n============== Exercise #3 ==============');
     let shoppers = [
         {name: 'Cameron', amount: 180},
         {name: 'Ryan', amount: 250},
@@ -54,13 +58,17 @@
     ];
 
     shoppers.forEach(function(shopper){
+        let amountAsCurrency = parseFloat(shopper.amount).toLocaleString('en-US', {style: 'currency', currency: 'USD'});
         if(shopper.amount > 200){
-            let total = (shopper.amount - (shopper.amount * .12)).toLocaleString('en-US', {style: 'currency', currency: 'USD'});
-            let savings = (shopper.amount * .12).toLocaleString('en-US', {style: 'currency', currency: 'USD'});
-            console.log(`${shopper.name} has a bill of $${shopper.amount}, and received a 12% discount. \n${shopper.name}'s discounted total is ${total}, with a savings of ${savings}.\n`);
-        }else{
-            let remaining = (200 - shopper.amount).toLocaleString('en-US', {style: 'currency', currency: 'USD'});
-            console.log(`${shopper.name} has a bill of $${shopper.amount}, and did not receive a discount. \n${shopper.name} will have to spend ${remaining} more to receive a 12% discount.\n`);
+            // Shoppers that get the discount
+            let savings = parseFloat(shopper.amount) *.12;
+            let total = (parseFloat(shopper.amount) - (savings)).toLocaleString('en-US', {style: 'currency', currency: 'USD'});
+            savings = savings.toLocaleString('en-US', {style: 'currency', currency: 'USD'});
+            console.log(`${shopper.name} has a bill of ${amountAsCurrency}, and received a 12% discount.\n${shopper.name}'s discounted total is ${total}, with a savings of ${savings}\n`);
+        } else {
+            // Shoppers that don't get the discount
+            let remaining = (200 - parseFloat(shopper.amount)).toLocaleString('en-US', {style: 'currency', currency: 'USD'});
+            console.log(`${shopper.name} has a bill of ${amountAsCurrency}, and did not receive a discount.\n${shopper.name} will have to spend ${remaining} more to receive a 12% discount.\n`);
         }
     });
 
@@ -76,7 +84,16 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
-    console.log("\n============== Exercise #4 ==============");
+    console.log('\n============== Exercise #4 ==============');
+    // let book = {
+    //     title: "The Hobbit",
+    //     author: {
+    //         firstName: "J.R.R.",
+    //         lastName: "Tolkien"
+    //     }
+    // }
+    // console.log( book.title );
+    // console.log( book.author.firstName );
     let books = [
         {
             title: "The Hobbit",
@@ -100,23 +117,24 @@
             }
         },
         {
-            title: "The Great Gatsby",
+            title: "Jurassic Park",
             author: {
-                firstName: "F. Scott",
-                lastName: "Fitzgerald"
+                firstName: "Michael",
+                lastName: "Crichton"
             }
         },
         {
-            title: "The Catcher in the Rye",
+            title: "Black Hawk Down",
             author: {
-                firstName: "J.D.",
-                lastName: "Salinger"
+                firstName: "Mark",
+                lastName: "Bowden"
             }
         }
-    ]
+    ];
     console.log(books[0].title);
     console.log(books[0].author.firstName);
     console.log(books[0].author.lastName);
+
     /**
      * TODO:
      * Loop through the books array and output the following information about
@@ -141,14 +159,21 @@
      *      ---
      *      ...
      */
-    console.log("\n============== Exercise #5 ==============");
-    const bookInfo = (arr) => {
-        arr.forEach(function(book, index){
-            console.log(`Book # ${index + 1}\nTitle: ${book.title}\nAuthor: ${book.author.firstName} ${book.author.lastName}\n---`);
-        });
-    }
-    bookInfo(books);
-
+    console.log('\n============== Exercise #5 ==============');
+    let oneConsoleLogToRuleThemAll = '';
+    books.forEach(function(book, index){
+        let bookNumber = index + 1;
+        //console.log(bookNumber);
+        let fullName = `${book.author.firstName} ${book.author.lastName}`;
+        //console.log(fullName);
+        let message = `Book # ${bookNumber}\nTitle: ${book.title}\nAuthor: ${fullName}\n---\n`;
+        //console.log(message);
+        // doing it all at once if you want
+        // console.log(`Book # ${index + 1}\nTitle: ${book.title}\nAuthor: ${book.author.firstName} ${book.author.lastName}\n---`);
+        // concatenate into the original string and console log it after the loop
+        oneConsoleLogToRuleThemAll += message;
+    });
+    console.log(oneConsoleLogToRuleThemAll);
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -159,33 +184,36 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
-    console.log("\n============== Exercise #6 ==============");
-    const createBook = (title, author) => {
-        let book = {
+    console.log('\n============== BONUS ==============');
+    // let myAuthor = "Jason Merrell";
+    // let jasonsBook = createBook("Coding for Awesome People", "Jason Merrell");
+    function createBook(title, author){
+        let authorArray = author.split(' '); // ["Jason", "Merrell"]
+        let bookObject = {
             title: title,
             author: {
-                firstName: author.split(" ")[0],
-                lastName: author.split(" ")[1]
+                firstName: authorArray[0],
+                lastName: authorArray[1]
             }
-        }
-        return book;
+        };
+        return bookObject;
     }
+    //console.log( createBook("The Hobbit", "J.R.R. Tolkien") );
     let books2 = [
         createBook("The Hobbit", "J.R.R. Tolkien"),
         createBook("The Fellowship of the Ring", "J.R.R. Tolkien"),
         createBook("Of Mice and Men", "John Steinbeck"),
-        createBook("The Great Gatsby", "F. Scott Fitzgerald"),
-        createBook("The Catcher in the Rye", "J.D. Salinger")
+        createBook("Jurassic Park", "Michael Crichton"),
+        createBook("Black Hawk Down", "Mark Bowden")
     ];
-
-    const showBookInfo = (book, index) => {
-        console.log(`Book # ${index + 1}\nTitle: ${book.title}\nAuthor: ${book.author.firstName} ${book.author.lastName}\n---`);
+    //console.log(books2);
+    function showBookInfo(book, index) {
+        let bookNumber = index + 1;
+        let fullName = `${book.author.firstName} ${book.author.lastName}`;
+        let message = `Book # ${bookNumber}\nTitle: ${book.title}\nAuthor: ${fullName}\n---\n`;
+        console.log(message);
     }
-    const bookInfo2 = (arr) => {
-        arr.forEach(function(book, index){
-            showBookInfo(book, index);
-        });
-    }
-    bookInfo2(books2);
-
+    books2.forEach(function(book, index){
+       showBookInfo(book, index);
+    });
 })();
