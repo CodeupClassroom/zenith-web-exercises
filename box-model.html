@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Box Model Lecture</title>
+  <!--
+      - box model
+      - width / height
+      - padding
+      - border
+      - setting multiple values
+      - border
+      - Chrome Inspector
+      - div vs. span (block vs. inline elements)
+      - box-sizing
+  -->
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      /*width: 100%;*/
+      background: black;
+      margin: 0;
+      color: white;
+    }
+
+    h1 {
+      text-align: center;
+      /*background: purple;*/
+      margin: 0;
+    }
+
+    .box {
+      color: white;
+      height: 200px;
+      width: 200px;
+      /* top left bottom right */
+      /* y-axis x-axis  */
+      padding: 10px 0 20px 5px;
+      border: 10px solid red;
+      /*margin: 10px 0;*/
+      /*border: 5px solid red;*/
+    }
+
+    .box1 {
+      background: blue;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    .box2 {
+      background: green;
+      margin-top: 10px
+      /*box-sizing: border-box;*/
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="box box1">
+  <h1>Box 1</h1>
+</div>
+
+<div class="box box2">
+  <h1>Box 2</h1>
+</div>
+
+<!--<div style="width: 50%; background: blue">-->
+<!--  <div>Div 1</div>-->
+<!--  <div>Div 2</div>-->
+<!--</div>-->
+
+<!--<p>-->
+<!--  <span>Span 1</span>-->
+<!--  <span>Span 2</span>-->
+<!--</p>-->
+
+
+
+<!--
+  Difference between div and span: span is inline and div is block level
+
+  Inline - could be within a block
+  Block - takes up the full size
+
+-->
+</body>
+</html>

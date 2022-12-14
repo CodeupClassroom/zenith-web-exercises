@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Box Model Lecture</title>
+  <!--
+      - box model
+      - width / height
+      - padding
+      - border
+      - setting multiple values
+      - border
+      - Chrome Inspector
+      - div vs. span (block vs. inline elements)
+      - box-sizing
+  -->
+  <style>
+
+    body {
+      background: black;
+      margin: 0;
+      float: left;
+    }
+
+    p {
+      padding: 0;
+    }
+
+    h1 {
+      text-align: center;
+      background: purple;
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+
+    .box {
+      background-color: blue;
+      color: white;
+      height: 200px;
+      width: 25%;
+      display: inline-block;
+      border: 0;
+      padding: 0;
+      margin: 0;
+
+      /*padding: 30px;*/
+      /*border: 5px solid red;*/
+    }
+
+    .box:nth-of-type(even) {
+      background: green;
+    }
+
+    .box:nth-of-type(odd) {
+      background: blue;
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="box">
+<!--  <h1>Box 1</h1>-->
+</div>
+<div class="box">
+<!--  <h1>Box 2</h1>-->
+</div>
+<div class="box">
+<!--  <h1>Box 3</h1>-->
+</div>
+<div class="box">
+<!--  <h1>Box 4</h1>-->
+</div>
+
+
+</body>
+</html>
