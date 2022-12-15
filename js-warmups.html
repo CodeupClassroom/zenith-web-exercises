@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pets JS Challenge</title>
+</head>
+<body>
+<script>
+
+    /*
+        ================================= WARM UP
+
+    Create a function, findAverageDogAge, that takes in a array of pet objects with age properties and returns the average age of a dog.
+
+
+    findAverageDogAge(pets) // returns 7.5
+     */
+
+    "use strict";
+
+    // const pets = [
+    //     {
+    //         name: 'Sparky',
+    //         type: 'Fish',
+    //         age: 4
+    //     },
+    //     {
+    //         name: 'Mr. Pig',
+    //         type: 'Cat',
+    //         age: 4
+    //     },
+    //     {
+    //         name: 'Bubba',
+    //         type: 'Dog',
+    //         age: 5
+    //     },
+    //     {
+    //         name: 'Pickles',
+    //         type: 'Dog',
+    //         age: 10
+    //     }
+    //
+    // ];
+
+    // function findAverageDogAge(pets) {
+    //     let total = 0;
+    //     let dogCount = 0;
+    //
+    //     pets.forEach(function(pet) {
+    //         if (pet.type === 'Dog') {
+    //             total += pet.age;
+    //             dogCount++;
+    //         }
+    //     });
+    //
+    //     // for (let i = 0; i < pets.length; i += 1) {
+    //     //     if (pets[i].type === 'Dog') {
+    //     //         total += pets[i].age;
+    //     //         dogCount++;
+    //     //     }
+    //     // }
+    //     return total / dogCount;
+    // }
+
+    // console.log(findAverageDogAge(pets), 7.5);
+
+
+    /*
+    ================================= WARM UP
+
+    Create a function, returnPetsWithNoFish, that takes in a array of pet objects and returns an array of pet objects with no pets of type 'Fish'.
+
+        const pets = [
+        {
+            name: 'Sparky',
+            type: 'Fish',
+            age: 4
+        },
+        {
+            name: 'Mr. Pig',
+            type: 'Cat',
+            age: 4
+        },
+        {
+            name: 'Bubba',
+            type: 'Dog',
+            age: 5
+        },
+        {
+            name: 'Beans',
+            type: 'Dog',
+            age: 3
+        },
+        {
+            name: 'Mr. Salmon',
+            type: 'Fish',
+            age: 1
+        }
+    ];
+
+    returnPetsWithNoFish(pets) // returns...
+
+        [
+        {
+            name: 'Mr. Pig',
+            type: 'Cat',
+            age: 4
+        },
+            {
+                name: 'Bubba',
+                type: 'Dog',
+                age: 5
+            },
+            {
+                name: 'Beans',
+                type: 'Dog',
+                age: 3
+            }
+        ]
+    */
+
+
+    const pets = [
+        {
+            name: 'Sparky',
+            type: 'Fish',
+            age: 4
+        },
+        {
+            name: 'Mr. Pig',
+            type: 'Cat',
+            age: 4
+        },
+        {
+            name: 'Bubba',
+            type: 'Dog',
+            age: 5
+        },
+        {
+            name: 'Beans',
+            type: 'Dog',
+            age: 3
+        },
+        {
+            name: 'Mr. Salmon',
+            type: 'Fish',
+            age: 1
+        }
+    ];
+
+    function returnPetsWithNoFish(pets) {
+        const output = [];
+        pets.forEach(pet => {
+            if (pet.type !== 'Fish') {
+                output.push(pet);
+            }
+        });
+        return output;
+    }
+
+
+    console.log(returnPetsWithNoFish(pets), [
+        {
+            name: 'Mr. Pig',
+            type: 'Cat',
+            age: 4
+        },
+        {
+            name: 'Bubba',
+            type: 'Dog',
+            age: 5
+        },
+        {
+            name: 'Beans',
+            type: 'Dog',
+            age: 3
+        }
+    ]);
+
+    const otherPets = [
+        {
+            name: 'Bubba',
+            type: 'Fish',
+            age: 5
+        },
+        {
+            name: 'Beans',
+            type: 'Dog',
+            age: 3
+        }
+    ];
+
+    returnPetsWithNoFish(otherPets);
+
+
+
+</script>
+</body>
+</html>
