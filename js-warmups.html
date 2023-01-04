@@ -256,6 +256,39 @@
 
 
 
+
+    // function iBeforeE(str) {
+    //     let output = '';
+    //     for (let i = 0; i < str.length; i += 1) {
+    //         if (str[i] + str[i + 1] === 'ei') {
+    //             output += 'ie';
+    //             i++;
+    //         } else {
+    //             output += str[i];
+    //         }
+    //     }
+    //     return output;
+    // }
+
+    function iBeforeE(str) {
+        let output = '';
+        for (let i = 0; i < str.length; i += 1) {
+            if (str[i] + str[i + 1] === 'ei') {
+                output += 'ie';
+                i++;
+            } else {
+                output += str[i];
+            }
+        }
+        return output;
+    }
+
+    // console.log(iBeforeE('ei'), 'ie'); // returns 'ie'
+    // console.log(iBeforeE('height'), 'hieght'); // returns 'hieght'
+    // console.log(iBeforeE('heist'), 'hiest'); // returns 'hiest'
+    // console.log(iBeforeE('their'), 'thier'); // returns 'thier'
+    // console.log(iBeforeE('theirtheir'), 'thierthier'); // returns 'thierthier'
+
 </script>
 </body>
 </html>

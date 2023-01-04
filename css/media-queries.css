@@ -1,0 +1,128 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 1em;
+    font-family: Arial, serif;
+}
+.hidden-on-desktop a {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    background: #C0FFFE;
+    border: 2px solid lightgrey;
+    padding: 1em;
+    color: black;
+    text-decoration: none;
+}
+a:hover {
+    opacity: .8;
+}
+h1 {
+    text-align: center;
+    font-size: 3.3em;
+    margin-top: .2em;
+}
+nav li {
+    list-style: none;
+    margin: 1em 0;
+    padding: 0;
+}
+nav ul {
+    padding: 0;
+}
+nav a {
+    display: inline-block;
+    text-align: center;
+    padding: .75em 0;
+    width: 100%;
+    background: lightgrey;
+}
+.header-img {
+    width: 100%;
+}
+img {
+    width: 100%;
+}
+.sub-section {
+    font-style: italic;
+    margin-top: 3em;
+    margin-bottom: 5em;
+}
+.sub-section h2 {
+    font-size: 1.3em;
+}
+#social-media-links {
+    display: none;
+}
+
+@media screen and (min-width: 700px) {
+    .container {
+        margin: 0 auto;
+        max-width: 1300px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: baseline;
+    }
+    h1 {
+        font-size: revert;
+        /*flex-grow: 1;*/
+        text-align: left;
+    }
+    .hidden-on-desktop {
+        display: none;
+    }
+    nav {
+        flex-grow: 1;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .nav-links {
+        display: flex;
+    }
+    .nav-links a {
+        background: none;
+    }
+    .nav-links li {
+        margin-left: 1em;
+    }
+    header h1 {
+        margin-right: auto;
+    }
+    .main{
+        padding-right: 2em;
+    }
+    .main {
+        width: 66.666%;
+    }
+    .sub-section {
+        width: 33.333%;
+    }
+    a:hover {
+        opacity: 1;
+    }
+    /* Bonus */
+    footer {
+        display: flex;
+        align-items: center;
+        flex-basis: 100%;
+    }
+    footer p {
+        flex-grow: 1;
+    }
+    footer i {
+        font-size: 3em;
+        margin: 0 .2em;
+    }
+    footer a {
+        text-decoration: none;
+        color: black;
+    }
+    footer a:hover {
+        color: grey;
+    }
+    #social-media-links {
+        display: block;
+    }
+}
