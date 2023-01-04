@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Pets JS Challenge</title>
+    <title>JS Challenges</title>
 </head>
 <body>
 <script>
@@ -159,23 +159,23 @@
     }
 
 
-    console.log(returnPetsWithNoFish(pets), [
-        {
-            name: 'Mr. Pig',
-            type: 'Cat',
-            age: 4
-        },
-        {
-            name: 'Bubba',
-            type: 'Dog',
-            age: 5
-        },
-        {
-            name: 'Beans',
-            type: 'Dog',
-            age: 3
-        }
-    ]);
+    // console.log(returnPetsWithNoFish(pets), [
+    //     {
+    //         name: 'Mr. Pig',
+    //         type: 'Cat',
+    //         age: 4
+    //     },
+    //     {
+    //         name: 'Bubba',
+    //         type: 'Dog',
+    //         age: 5
+    //     },
+    //     {
+    //         name: 'Beans',
+    //         type: 'Dog',
+    //         age: 3
+    //     }
+    // ]);
 
     const otherPets = [
         {
@@ -190,9 +190,104 @@
         }
     ];
 
-    returnPetsWithNoFish(otherPets);
+    // returnPetsWithNoFish(otherPets);
 
 
+
+
+
+    // Write a function, returnLastTwoChars that returns the last two characters of an input string. Assume a string input of at least two characters.
+    //
+    // returnLastTwoChars('cat') // returns 'at'
+    // returnLastTwoChars('hello') // returns 'lo'
+    // returnLastTwoChars('hi') // returns 'hi'
+
+    //
+    // function returnLastTwoChars(input) {
+    //     return input.slice(-2);
+    // }
+    //
+    //
+    // console.log(returnLastTwoChars('cat'), 'at'); // returns 'at'
+    // console.log(returnLastTwoChars('hello'), 'lo'); // returns 'lo'
+    // console.log(returnLastTwoChars('hi'), 'hi'); // returns 'hi'
+
+
+
+    //
+    // EXTRA CHALLENGE
+    //
+    //
+    // Create a function, returnLastCharsReversed that takes in two arguments:
+    //
+    //     1. a string of characters
+    // 2. an integer that represents how many characters should be returned
+    //
+    // The function should return a string of characters, equal to the number specified
+    // by the second argument, in reverse order. If 0 is passed as a second argument,
+    // return an empty string. Assume only valid inputs and that the second argument
+    // will NOT exceed the length of the input string.
+    //
+    //     Examples:
+    //
+    // returnLastCharsReversed('cat', 0) // returns ''
+    // returnLastCharsReversed('cat', 1) // returns 't'
+    // returnLastCharsReversed('cat', 2) // returns 'ta'
+    // returnLastCharsReversed('cat', 3) // returns 'tac'
+    // returnLastCharsReversed('codeup', 1) // returns 'p'
+    // returnLastCharsReversed('codeup', 3) // returns 'pue'
+    // returnLastCharsReversed('codeup', 4) // returns 'pued'
+
+
+
+
+
+    // function returnLastCharsReversed(str, noOfChars) {
+    //     return str.split('').reverse().slice(0, noOfChars).join('');
+    // }
+    //
+    // console.log(returnLastCharsReversed('cat', 0), ''); // returns ''
+    // console.log(returnLastCharsReversed('cat', 1), ''); // returns 't'
+    // console.log(returnLastCharsReversed('cat', 2), 'ta'); // returns 'ta'
+    // console.log(returnLastCharsReversed('cat', 3), 'tac'); // returns 'tac'
+    // console.log(returnLastCharsReversed('codeup', 1), 'p'); // returns 'p'
+    // console.log(returnLastCharsReversed('codeup', 3), 'pue'); // returns 'pue'
+    // console.log(returnLastCharsReversed('codeup', 4), 'pued'); // returns 'pued'
+
+
+
+
+    // function iBeforeE(str) {
+    //     let output = '';
+    //     for (let i = 0; i < str.length; i += 1) {
+    //         if (str[i] + str[i + 1] === 'ei') {
+    //             output += 'ie';
+    //             i++;
+    //         } else {
+    //             output += str[i];
+    //         }
+    //     }
+    //     return output;
+    // }
+
+    function iBeforeE(str) {
+        let output = '';
+        for (let i = 0; i < str.length; i += 1) {
+            if (str[i] + str[i + 1] === 'ei') {
+                output += 'ie';
+                i++;
+            } else {
+                output += str[i];
+            }
+        }
+        return output;
+    }
+
+    // console.log(iBeforeE('ei'), 'ie'); // returns 'ie'
+    // console.log(iBeforeE('height'), 'hieght'); // returns 'hieght'
+    // console.log(iBeforeE('heist'), 'hiest'); // returns 'hiest'
+    // console.log(iBeforeE('their'), 'thier'); // returns 'thier'
+    // console.log(iBeforeE('theirtheir'), 'thierthier'); // returns 'thierthier'
 
 </script>
 </body>
