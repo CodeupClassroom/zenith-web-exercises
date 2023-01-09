@@ -193,9 +193,6 @@
     // returnPetsWithNoFish(otherPets);
 
 
-
-
-
     // Write a function, returnLastTwoChars that returns the last two characters of an input string. Assume a string input of at least two characters.
     //
     // returnLastTwoChars('cat') // returns 'at'
@@ -211,7 +208,6 @@
     // console.log(returnLastTwoChars('cat'), 'at'); // returns 'at'
     // console.log(returnLastTwoChars('hello'), 'lo'); // returns 'lo'
     // console.log(returnLastTwoChars('hi'), 'hi'); // returns 'hi'
-
 
 
     //
@@ -239,9 +235,6 @@
     // returnLastCharsReversed('codeup', 4) // returns 'pued'
 
 
-
-
-
     // function returnLastCharsReversed(str, noOfChars) {
     //     return str.split('').reverse().slice(0, noOfChars).join('');
     // }
@@ -253,8 +246,6 @@
     // console.log(returnLastCharsReversed('codeup', 1), 'p'); // returns 'p'
     // console.log(returnLastCharsReversed('codeup', 3), 'pue'); // returns 'pue'
     // console.log(returnLastCharsReversed('codeup', 4), 'pued'); // returns 'pued'
-
-
 
 
     // function iBeforeE(str) {
@@ -288,6 +279,53 @@
     // console.log(iBeforeE('heist'), 'hiest'); // returns 'hiest'
     // console.log(iBeforeE('their'), 'thier'); // returns 'thier'
     // console.log(iBeforeE('theirtheir'), 'thierthier'); // returns 'thierthier'
+
+
+    // Create a function, zipArrays, that takes two array inputs of the same length and returns an array with the elements of both arrays alternating in the order of first[0], second[0], first[1], second[1], etc. If both arrays are empty, return an empty array.
+    //
+    //
+    // zipArrays([], []) // returns []
+    // zipArrays([1], [2]) // returns [1, 2]
+    // zipArrays(['a', 'b'], ['c', 'd']) // returns... ['a', 'c', 'b', 'd']
+    // zipArrays([1,2,'a','b'], ['bob', null, 'sally', 25]) // returns...
+    //
+    //     [
+    //     1,
+    //         'bob',
+    //         2,
+    //         null,
+    //         'a',
+    //         'sally',
+    //         'b',
+    //         25
+    //     ]
+
+    function zipArrays(first, second) {
+        const output = [];
+        if (first.length === 0) {
+            return [];
+        }
+        for (let i = 0; i < first.length; i += 1) {
+            output.push(first[i]);
+            output.push(second[i]);
+        }
+        return output;
+    }
+
+    console.log(zipArrays([], []), []); // returns []
+    console.log(zipArrays([1], [2]), [1, 2]); // returns [1, 2]
+    console.log(zipArrays(['a', 'b'], ['c', 'd']), ['a', 'c', 'b', 'd']); // returns... ['a', 'c', 'b', 'd']
+    console.log(zipArrays([1, 2, 'a', 'b'], ['bob', null, 'sally', 25]), [
+        1,
+        'bob',
+        2,
+        null,
+        'a',
+        'sally',
+        'b',
+        25
+    ]); // returns...
+
 
 </script>
 </body>
