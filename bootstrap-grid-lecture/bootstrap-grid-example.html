@@ -1,0 +1,389 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Bootstrap Grid System Lecture</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+    <!-- A few styles for presentation -->
+    <style>
+        body {
+            padding-bottom: 600px;
+        }
+        div {
+            background-color: #99ff99;
+            border: 2px solid black;
+            text-align: center;
+        }
+        div.row {
+            background-color: white;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+<!-- various container options are available -->
+<main class="container">
+
+    <h1 class="display-3 my-5 text-center">Bootstrap Grid System</h1>
+
+    <!-- ******************************** EXTRA EXTRA LARGE BREAK POINT ******************************** -->
+<!--    <h3 class="">Extra Extra Large Break Point: &ge; 1400px</h3>-->
+<!--    <div class="row">-->
+<!--        <div class="col-xxl-1">col-xxl-1</div>-->
+<!--        <div class="col-xxl-1">col-xxl-1</div>-->
+<!--        <div class="col-xxl-1">col-xxl-1</div>-->
+<!--        <div class="col-xxl-1">col-xxl-1</div>-->
+<!--        <div class="col-xxl-1">col-xxl-1</div>-->
+<!--        <div class="col-xxl-1">col-xxl-1</div>-->
+<!--        <div class="col-xxl-1">col-xxl-1</div>-->
+<!--        <div class="col-xxl-1">col-xxl-1</div>-->
+<!--        <div class="col-xxl-1">col-xxl-1</div>-->
+<!--        <div class="col-xxl-1">col-xxl-1</div>-->
+<!--        <div class="col-xxl-1">col-xxl-1</div>-->
+<!--        <div class="col-xxl-1">col-xxl-1</div>-->
+<!--    </div>-->
+
+<!--    <br>-->
+
+<!--    &lt;!&ndash; ******************************** EXTRA LARGE BREAK POINT ******************************** &ndash;&gt;-->
+<!--    <h3 class="">Extra Large Break Point: &ge; 1200px</h3>-->
+<!--    <div class="row">-->
+<!--        <div class="col-xl-1">col-xl-1</div>-->
+<!--        <div class="col-xl-1">col-xl-1</div>-->
+<!--        <div class="col-xl-1">col-xl-1</div>-->
+<!--        <div class="col-xl-1">col-xl-1</div>-->
+<!--        <div class="col-xl-1">col-xl-1</div>-->
+<!--        <div class="col-xl-1">col-xl-1</div>-->
+<!--        <div class="col-xl-1">col-xl-1</div>-->
+<!--        <div class="col-xl-1">col-xl-1</div>-->
+<!--        <div class="col-xl-1">col-xl-1</div>-->
+<!--        <div class="col-xl-1">col-xl-1</div>-->
+<!--        <div class="col-xl-1">col-xl-1</div>-->
+<!--        <div class="col-xl-1">col-xl-1</div>-->
+<!--    </div>-->
+
+<!--    <br>-->
+
+
+<!--    &lt;!&ndash; ******************************** LARGE BREAK POINT ******************************** &ndash;&gt;-->
+<!--    <h3 class="">Large Break Point: &ge; 992px</h3>-->
+<!--    <div class="row">-->
+<!--        <div class="col-lg-1">col-lg-1</div>-->
+<!--        <div class="col-lg-1">col-lg-1</div>-->
+<!--        <div class="col-lg-1">col-lg-1</div>-->
+<!--        <div class="col-lg-1">col-lg-1</div>-->
+<!--        <div class="col-lg-1">col-lg-1</div>-->
+<!--        <div class="col-lg-1">col-lg-1</div>-->
+<!--        <div class="col-lg-1">col-lg-1</div>-->
+<!--        <div class="col-lg-1">col-lg-1</div>-->
+<!--        <div class="col-lg-1">col-lg-1</div>-->
+<!--        <div class="col-lg-1">col-lg-1</div>-->
+<!--        <div class="col-lg-1">col-lg-1</div>-->
+<!--        <div class="col-lg-1">col-lg-1</div>-->
+<!--    </div>-->
+
+<!--    <br>-->
+
+<!--    &lt;!&ndash; ******************************** MEDIUM BREAK POINT ******************************** &ndash;&gt;-->
+<!--    <h3>Medium Break Point: &ge; 768px</h3>-->
+<!--    <div class="row">-->
+
+<!--        <div class="col-md-1">col-md-1</div>-->
+<!--        <div class="col-md-1">col-md-1</div>-->
+<!--        <div class="col-md-1">col-md-1</div>-->
+<!--        <div class="col-md-1">col-md-1</div>-->
+<!--        <div class="col-md-1">col-md-1</div>-->
+<!--        <div class="col-md-1">col-md-1</div>-->
+<!--        <div class="col-md-1">col-md-1</div>-->
+<!--        <div class="col-md-1">col-md-1</div>-->
+<!--        <div class="col-md-1">col-md-1</div>-->
+<!--        <div class="col-md-1">col-md-1</div>-->
+<!--        <div class="col-md-1">col-md-1</div>-->
+<!--        <div class="col-md-1">col-md-1</div>-->
+
+<!--    </div>-->
+
+<!--    <br>-->
+
+<!--    &lt;!&ndash; ******************************** SMALL BREAK POINT ******************************** &ndash;&gt;-->
+<!--    <h3>Small Break Point: &ge; 576px</h3>-->
+<!--    <div class="row">-->
+
+<!--        <div class="col-sm-1">col-sm-1</div>-->
+<!--        <div class="col-sm-1">col-sm-1</div>-->
+<!--        <div class="col-sm-1">col-sm-1</div>-->
+<!--        <div class="col-sm-1">col-sm-1</div>-->
+<!--        <div class="col-sm-1">col-sm-1</div>-->
+<!--        <div class="col-sm-1">col-sm-1</div>-->
+<!--        <div class="col-sm-1">col-sm-1</div>-->
+<!--        <div class="col-sm-1">col-sm-1</div>-->
+<!--        <div class="col-sm-1">col-sm-1</div>-->
+<!--        <div class="col-sm-1">col-sm-1</div>-->
+<!--        <div class="col-sm-1">col-sm-1</div>-->
+<!--        <div class="col-sm-1">col-sm-1</div>-->
+
+<!--    </div>-->
+
+<!--    <br>-->
+
+<!--    &lt;!&ndash; ******************************** EXTRA SMALL BREAK POINT ******************************** &ndash;&gt;-->
+<!--    <h3>Extra Small: &lt; 576px</h3>-->
+<!--    <div class="row">-->
+
+<!--        <div class="col-1">col-1</div>-->
+<!--        <div class="col-1">col-1</div>-->
+<!--        <div class="col-1">col-1</div>-->
+<!--        <div class="col-1">col-1</div>-->
+<!--        <div class="col-1">col-1</div>-->
+<!--        <div class="col-1">col-1</div>-->
+<!--        <div class="col-1">col-1</div>-->
+<!--        <div class="col-1">col-1</div>-->
+<!--        <div class="col-1">col-1</div>-->
+<!--        <div class="col-1">col-1</div>-->
+<!--        <div class="col-1">col-1</div>-->
+<!--        <div class="col-1">col-1</div>-->
+
+<!--    </div>-->
+
+<!--    <br>-->
+<!--    <hr>-->
+
+<!--    &lt;!&ndash; ******************************** FEWER COLUMNS ******************************** &ndash;&gt;-->
+<!--    <h3>Fewer Columns Large</h3>-->
+<!--    <div class="row">-->
+
+<!--        <div class="col-md-6 col-lg-4">col-lg-4</div>-->
+<!--        <div class="col-md-6 col-lg-4">col-lg-4</div>-->
+<!--        <div class="col-md-6 col-lg-4">col-lg-4</div>-->
+
+<!--    </div>-->
+
+<!--    <br>-->
+
+<!--    &lt;!&ndash; ******************************** MIXING DIFFERENT COLUMN SIZES ******************************** &ndash;&gt;-->
+<!--    <h3>Different Size Divs with Columns</h3>-->
+<!--    <div class="row">-->
+
+<!--&lt;!&ndash;        <div class="col-md-2">col-md-2</div>&ndash;&gt;-->
+<!--        <div class="col-md-8 offset-md-2">col-md-8</div>-->
+<!--        <div class="col-md-1 offset-md-1">col-md-1</div>-->
+
+<!--    </div>-->
+
+<!--    <br>-->
+
+<!--    &lt;!&ndash; ******************************** MULTIPLE BREAKPOINTS ******************************** &ndash;&gt;-->
+<!--    <h3>Various Orderings at Different Breakpoints</h3>-->
+<!--    &lt;!&ndash; 12 columns across for extra large screens and above &ndash;&gt;-->
+<!--    &lt;!&ndash; 6 columns across for large screens &ndash;&gt;-->
+<!--    &lt;!&ndash; 4 columns across for medium screens &ndash;&gt;-->
+<!--    &lt;!&ndash; 3 column across for small screens &ndash;&gt;-->
+<!--    &lt;!&ndash; 2 column across for extra small screens &ndash;&gt;-->
+
+    <div class="row">
+
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1">
+            col-6
+            <br>
+            col-sm-4
+            <br>
+            col-md-3
+            <br>
+            col-lg-2
+            <br>
+            col-xl-1
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1">
+            col-6
+            <br>
+            col-sm-4
+            <br>
+            col-md-3
+            <br>
+            col-lg-2
+            <br>
+            col-xl-1
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1">
+            col-6
+            <br>
+            col-sm-4
+            <br>
+            col-md-3
+            <br>
+            col-lg-2
+            <br>
+            col-xl-1
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1">
+            col-6
+            <br>
+            col-sm-4
+            <br>
+            col-md-3
+            <br>
+            col-lg-2
+            <br>
+            col-xl-1
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1">
+            col-6
+            <br>
+            col-sm-4
+            <br>
+            col-md-3
+            <br>
+            col-lg-2
+            <br>
+            col-xl-1
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1">
+            col-6
+            <br>
+            col-sm-4
+            <br>
+            col-md-3
+            <br>
+            col-lg-2
+            <br>
+            col-xl-1
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1">
+            col-6
+            <br>
+            col-sm-4
+            <br>
+            col-md-3
+            <br>
+            col-lg-2
+            <br>
+            col-xl-1
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1">
+            col-6
+            <br>
+            col-sm-4
+            <br>
+            col-md-3
+            <br>
+            col-lg-2
+            <br>
+            col-xl-1
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1">
+            col-6
+            <br>
+            col-sm-4
+            <br>
+            col-md-3
+            <br>
+            col-lg-2
+            <br>
+            col-xl-1
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1">
+            col-6
+            <br>
+            col-sm-4
+            <br>
+            col-md-3
+            <br>
+            col-lg-2
+            <br>
+            col-xl-1
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1">
+            col-6
+            <br>
+            col-sm-4
+            <br>
+            col-md-3
+            <br>
+            col-lg-2
+            <br>
+            col-xl-1
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1">
+            col-6
+            <br>
+            col-sm-4
+            <br>
+            col-md-3
+            <br>
+            col-lg-2
+            <br>
+            col-xl-1
+        </div>
+    </div>
+
+<!--    <br>-->
+<!--    <hr>-->
+
+<!--    &lt;!&ndash; ******************************** OFFSET TO CENTER ******************************** &ndash;&gt;-->
+<!--    <h3>Using Offset to Center</h3>-->
+<!--    <div class="row">-->
+
+<!--        <div class="col-lg-4 offset-lg-4">col-lg-4 offset-lg-4</div>-->
+
+<!--    </div>-->
+
+<!--    <br>-->
+
+<!--    &lt;!&ndash; ******************************** MULTIPLE OFFSETS ******************************** &ndash;&gt;-->
+<!--    <h3>Multiple Offsets</h3>-->
+<!--    <div class="row">-->
+
+<!--        <div class="offset-lg-3 col-lg-3">offset-lg-3 col-lg-3</div>-->
+<!--        <div class="offset-lg-3 col-lg-3">offset-lg-3 col-lg-3</div>-->
+
+<!--    </div>-->
+
+<!--    <br>-->
+
+<!--    &lt;!&ndash; ******************************** OFFSET WITH BREAKPOINTS ******************************** &ndash;&gt;-->
+<!--    <h3>Offset at a Specific Breakpoint</h3>-->
+<!--    <div class="row">-->
+
+<!--        <div class="offset-md-3 col-md-3 offset-lg-0 col-lg-6">-->
+<!--            offset-md-3-->
+<!--            <br>-->
+<!--            col-md-3-->
+<!--            <br>-->
+<!--            offset-lg-0-->
+<!--            <br>-->
+<!--            col-lg-6-->
+<!--        </div>-->
+<!--        <div class="col-md-3 col-lg-6">col-md-3 col-lg-6</div>-->
+
+<!--    </div>-->
+
+<!--    <br>-->
+
+<!--    &lt;!&ndash; ******************************** NESTED COLUMNS ******************************** &ndash;&gt;-->
+    <h3>Nested Columns</h3>
+    <div class="row">
+
+        <div class="col-lg-8">col-lg-8</div>
+        <div class="col-lg-4">
+            Nested Row
+            <div class="row">
+                <div class="col-lg-6">col-lg-6</div>
+                <div class="col-lg-6">col-lg-6</div>
+            </div>
+        </div>
+
+    </div>
+
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>
