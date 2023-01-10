@@ -1,0 +1,1 @@
+Pull requests are a process for developers to review and collaborate on code
