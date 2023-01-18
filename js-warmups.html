@@ -193,9 +193,6 @@
     // returnPetsWithNoFish(otherPets);
 
 
-
-
-
     // Write a function, returnLastTwoChars that returns the last two characters of an input string. Assume a string input of at least two characters.
     //
     // returnLastTwoChars('cat') // returns 'at'
@@ -211,7 +208,6 @@
     // console.log(returnLastTwoChars('cat'), 'at'); // returns 'at'
     // console.log(returnLastTwoChars('hello'), 'lo'); // returns 'lo'
     // console.log(returnLastTwoChars('hi'), 'hi'); // returns 'hi'
-
 
 
     //
@@ -239,9 +235,6 @@
     // returnLastCharsReversed('codeup', 4) // returns 'pued'
 
 
-
-
-
     // function returnLastCharsReversed(str, noOfChars) {
     //     return str.split('').reverse().slice(0, noOfChars).join('');
     // }
@@ -253,8 +246,6 @@
     // console.log(returnLastCharsReversed('codeup', 1), 'p'); // returns 'p'
     // console.log(returnLastCharsReversed('codeup', 3), 'pue'); // returns 'pue'
     // console.log(returnLastCharsReversed('codeup', 4), 'pued'); // returns 'pued'
-
-
 
 
     // function iBeforeE(str) {
@@ -290,8 +281,6 @@
     // console.log(iBeforeE('theirtheir'), 'thierthier'); // returns 'thierthier'
 
 
-
-
     // Create a function, filterList, that takes a list of non-negative integers and strings and returns a new list with the strings filtered out.
     //
     // filterList([1,2,'a','b']) // returns [1,2]
@@ -299,7 +288,77 @@
     // filterList([1,2,'aasf','1','123',123]) // returns [1,2,123]
 
 
+    // Write a function that takes a neighborhood object and determines if it is desirable. A neighborhood is desirable
+    // if the median home price is less than 300000, crime rates are low, and the total rating of schools is at least 24.
 
+    // example data...
+
+    const neighborhood1 = {
+        neighborhood: "Lovely Estates",
+        medianHomePrice: 280000,
+        pool: true,
+        tennis: false,
+        crimeRate: "low",
+        schools: [
+            {name: "Elementary School", rating: 8},
+            {name: "Middle School", rating: 6},
+            {name: "High School", rating: 8}
+        ]
+    };
+
+    const neighborhood2 = {
+        neighborhood: "Luminous Estates",
+        medianHomePrice: 270000,
+        pool: true,
+        tennis: false,
+        crimeRate: "high",
+        schools: [
+            {name: "Elementary School", rating: 8},
+            {name: "Middle School", rating: 8},
+            {name: "High School", rating: 8}
+        ]
+    }
+
+    const neighborhood3 = {
+        neighborhood: "Oak Mountain",
+        medianHomePrice: 290000,
+        pool: false,
+        tennis: false,
+        crimeRate: "low",
+        schools: [
+            {name: "Elementary School", rating: 8},
+            {name: "Middle School", rating: 8},
+            {name: "High School", rating: 8}
+        ]
+    }
+
+    const neighborhood4 = {
+        neighborhood: "Ginormous Acres",
+        medianHomePrice: 350000,
+        pool: true,
+        tennis: true,
+        crimeRate: "low",
+        schools: [
+            {name: "Elementary School", rating: 9},
+            {name: "Middle School", rating: 9},
+            {name: "High School", rating: 9}
+        ]
+    }
+
+    function isDesirableNeighborhood(neighborhood) {
+        let totalSchoolRating = 0;
+        for (let i = 0; i < neighborhood.schools.length; i += 1) {
+            totalSchoolRating += neighborhood.schools[i].rating;
+        }
+        return totalSchoolRating >= 24 &&
+            neighborhood.medianHomePrice < 300000 &&
+            neighborhood.crimeRate === 'low';
+    }
+
+    console.log(isDesirableNeighborhood(neighborhood1)); // returns false due to school rating
+    console.log(isDesirableNeighborhood(neighborhood2)); // returns false due to crime rate
+    console.log(isDesirableNeighborhood(neighborhood3)); // returns true
+    console.log(isDesirableNeighborhood(neighborhood4)); // returns false due to median home price
 
 
 </script>
