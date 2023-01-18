@@ -75,16 +75,16 @@
 
         // implicit iteration
 
-        // $('li').css("color", "red");
+        // $('h3').css("background", "red");
 
         // explicit iteration with .each()
 
         // $('li').each(function(index, element) {
         //     var currentText = $(element).text();
         //     $(element).text(currentText + " " + index);
-        //     // if (index === 2) {
-        //     //     $(element).css('background', 'blue');
-        //     // }
+        //     if (index === 2) {
+        //         $(element).css('background', 'blue');
+        //     }
         // });
 
         // $('li').eq(2).css('background', 'blue');
@@ -92,8 +92,12 @@
 
         // make the text purple for all list items that start with the letter b and create a monochromatic transition for the background color
 
-        // $('li').each(function(index, element) {
-        //     // console.log(index);
+        // $('li').forEach(function(element) {
+        //     console.log(element);
+        // });
+
+        //     .each(function(index, element) {
+        //     console.log(index);
         //     if ($(element).text().toLowerCase().startsWith('b')) {
         //         $(element).css('color', 'purple');
         //     }
@@ -107,7 +111,10 @@
 
         // .first()
 
-        // $('article').first().css('background', 'lime');
+        // $('article')
+        //     .next()
+        //     .next()
+        //     .css('background', 'lime');
 
         // .last()
 
@@ -115,7 +122,26 @@
 
         // .children()
 
-        // $('section').first().children().css('background', 'yellow');
+        // $('section')
+        //     .first()
+        //     .children()
+        //     .first()
+        //     .next()
+        //     .children()
+        //     .first()
+        //     .css('background', 'yellow');
+
+        // $('main')
+        //     .children()
+        //     .last()
+        //     .children()
+        //     .last()
+        //     .children()
+        //     .first()
+        //     .next()
+        //     .next()
+        //     .css('background', 'yellow');
+
         // $('section').first().children('article').css('background', 'yellow');
 
         // .parent()
