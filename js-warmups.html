@@ -345,20 +345,38 @@
         ]
     }
 
+
+
+    // write that takes in the object
+        // sum the total of the school rating
+        // chain conditional logic to account for the three criteria
+
     function isDesirableNeighborhood(neighborhood) {
         let totalSchoolRating = 0;
         for (let i = 0; i < neighborhood.schools.length; i += 1) {
             totalSchoolRating += neighborhood.schools[i].rating;
         }
-        return totalSchoolRating >= 24 &&
-            neighborhood.medianHomePrice < 300000 &&
-            neighborhood.crimeRate === 'low';
+        return neighborhood.medianHomePrice < 300000 &&
+            neighborhood.crimeRate === 'low' &&
+            totalSchoolRating >= 24;
     }
 
-    console.log(isDesirableNeighborhood(neighborhood1)); // returns false due to school rating
-    console.log(isDesirableNeighborhood(neighborhood2)); // returns false due to crime rate
-    console.log(isDesirableNeighborhood(neighborhood3)); // returns true
-    console.log(isDesirableNeighborhood(neighborhood4)); // returns false due to median home price
+    // console.log(isDesirableNeighborhood(neighborhood1)); // returns false due to school rating
+    // console.log(isDesirableNeighborhood(neighborhood2)); // returns false due to crime rate
+    // console.log(isDesirableNeighborhood(neighborhood3)); // returns true
+    // console.log(isDesirableNeighborhood(neighborhood4)); // returns false due to median home price
+
+
+    // Create a function, encodeStr, that takes in a string and returns the string of characters with the following substitutions:
+    //
+    // 'a' or 'A' becomes '@'
+    // 'i' or 'I' becomes '1'
+    // 's' or 'S' becomes '$'
+    //
+    // encodeStr('apple') // returns '@pple'
+    // encodeStr('codeup') // returns 'codeup'
+    // encodeStr('SASS') // returns '$@$$'
+    // encodeStr('bike') // returns 'b1ke'
 
 
 </script>
