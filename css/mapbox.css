@@ -1,0 +1,105 @@
+#map {
+    /* the width and height may be set to any size */
+    width: 100%;
+    flex-grow: 1;
+    color:#000;
+}
+header.container {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.22);
+    background-color:#293742;
+    color:#fff;
+    align-items: center;
+    box-shadow: 0px 0px 10px -3px #000;
+    position: relative;
+    z-index: 8;
+}
+main.container, main.container>.row {
+    padding: 0;
+    flex-grow: 1;
+    column-gap: 0px;
+    color:#fff;
+}
+aside.column {
+    width: 350px;
+    flex: none;
+    border-right:1px solid rgba(0, 0, 0, 0.22);
+    background-color:#293742;
+    box-shadow: 2px 5px 12px -4px #000;
+    position:relative;
+    z-index:9;
+    padding: 20px 0;
+}
+.header-logo {
+    width: 150px;
+}
+.page-content {
+    box-shadow: inset 0px 0px 10px #000;
+}
+.search {
+    background: #1f2b34;
+    border: 1px solid #0000004d;
+    height: 37px;
+    border-radius: 6px;
+    color:#fff;
+    padding: 0px 20px;
+    outline: none;
+    transition: all ease .3s;
+    flex-grow:1;
+}
+.search:focus {
+    border: 1px solid rgba(255, 255, 255, 0.50);
+}
+.search::placeholder {
+    color: rgba(255, 255, 255, 0.50);
+}
+.search-wrapper {
+    width: 100%;
+    display:flex;
+}
+
+.loc-cards {
+    display: flex;
+    flex-direction: column;
+}
+.loc-card {
+    display:flex;
+    column-gap: 10px;
+    align-items:center;
+    padding: 20px 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.22);
+    cursor: pointer;
+    background-color: transparent;
+    transition: all ease .3s;
+}
+.loc-card:hover {
+    background-color: rgba(255, 255, 255, 0.09);
+}
+.loc-card-image-wrap {
+    flex:none;
+    height: 75px;
+    width: 100px;
+    border-radius: 8px;
+    overflow:hidden;
+}
+.loc-card-image {
+    object-fit:cover;
+    height:100%;
+    width:100%;
+}
+.loc-card-details {
+    font-size: 12px;
+}
+.loc-card-title {
+    font-size: 15px;
+    font-weight: 600;
+}
+.loc-card-address {
+    color: rgba(255, 255, 255, 0.60);
+}
+.loc-card-category {
+    color: rgba(255, 255, 255, 0.60);
+}
+
+.mapboxgl-popup-content img {
+    object-fit: cover;
+}

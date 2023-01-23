@@ -1,0 +1,68 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+img {
+    max-width: 100%;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #fff;
+}
+/* THE PAGE WRAPPER MIMICS THE BODY, ONLY WE ARE ABLE TO DO MORE WITH IT IF NECESSARY */
+.page-wrapper {
+    display:flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* THE CONTAINER -- ALSO KNOWN AS A "SECTION" or "WRAPPER" -- IS A FULL WIDTH DIV THAT
+   SEPARATES SECTIONS OF A WEBSITE. IT ALIGNS IT'S CHILD(REN), THE ROW, TO ITS CENTER,
+   ALLOWING THE ROW TO PROPERLY CONTROL MAX-WIDTH ON SITE CONTENT */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    flex: 0 0 auto;
+    padding: 20px 0;
+}
+/* THE ROW ESTABLISHES MAXIMUM WIDTH ON SITE CONTENT, AND ORGANIZES ITS CHILD(REN), THE
+   COLUMN, HORIZONTALLY. */
+.row {
+    display: flex;
+    width: 100%;
+    max-width: 900px;
+    padding: 0 20px;
+    column-gap: 20px;
+}
+/* OPTIONAL COMBO CLASS TO MAKE ROW FULL-WIDTH */
+.row.full-width {
+    max-width: unset;
+}
+/* OPTIONAL COMBO CLASS TO MAKE ROW COLUMNS SPACED APART */
+.row.space-between {
+    justify-content: space-between;
+}
+/* COLUMNS WILL, BY DEFAULT, SHARE SPACE EQUALLY HORIZONTALLY WITHIN THE ROW WITH
+   THEIR SIBLINGS. CONTENT PUT INSIDE THEM WILL STACK VERTICALLY. */
+.column {
+    display:flex;
+    flex-direction: column;
+    flex: 1 0;
+    min-width: 0px;
+}
+
+.column.align-center {
+    align-items: center;
+}
+.column.justify-center {
+    justify-content: center;
+}
+/* OPTIONAL COMBO CLASS TO MAKE A COLUMN SHRINK INSTEAD OF GROW */
+.column.col-shrink {
+    flex: 0 1 auto;
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First Mapbox Map</title>
+    <!-- Mapbox CSS -->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
+    <!-- Reset CSS -->
+    <link href="css/resets.css" rel="stylesheet"/>
+    <!-- Custom CSS -->
+    <link href="css/mapbox.css" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- The HTML element that serves as the Mapbox container -->
+<div class="page-wrapper">
+    <header class="container">
+        <div class="row full-width">
+            <div class="column justify-center">
+                <img src="images/codeup-mapbox.png" class="header-logo">
+            </div>
+            <div class="column justify-center">
+                <div class="search-wrapper">
+                    <input type="text" class="search" placeholder="Search for address ..."/>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="container">
+        <div class="row full-width">
+            <aside class="column">
+                <div class="row">
+                    <h4>Favorite Restaurants</h4>
+                </div>
+                <div class="loc-cards">
+
+                </div>
+            </aside>
+            <div class="column page-content">
+                <div id='map'></div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<!-- Keys -->
+<script src="js/keys.js"></script>
+<!-- Mapbox Geocoder Util Methods -->
+<script src="js/mapbox-geocoder-utils.js"></script>
+<!-- Mapbox JS -->
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+
+<!-- Custom JS -->
+<script>
+    mapboxgl.accessToken = keys.mapbox;
+    let map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/merrellj/cld4ojvs8000101odrb3dr4wu',
+        zoom: 10,
+        center: [-98.4916, 29.4252]
+    });
+    class Location {
+        constructor(props){
+            this.name = props.name;
+            this.image = props.image;
+            this.address = props.address;
+            this.category = props.category;
+            this.element = this.render();
+        }
+        render(){
+            let card = `
+                <div class="loc-card">
+                    <div class="loc-card-image-wrap">
+                        <img src="${this.image}" class="loc-card-image" />
+                    </div>
+                    <div class="loc-card-details">
+                        <h4 class="loc-card-title">${this.name}</h4>
+                        <div class="loc-card-address">${this.address}</div>
+                        <div class="loc-card-category">${this.category}</div>
+                    </div>
+                </div>
+            `;
+            document.querySelector('.loc-cards').insertAdjacentHTML('beforeend', card);
+            // get the element that was just added to the DOM
+            let cardElement = document.querySelector('.loc-cards').lastElementChild;
+            // add a click event listener to the card element
+            cardElement.addEventListener('click', () => {
+                // call the geocode method from the mapbox-geocoder-utils.js file
+                geocode(this.address, keys.mapbox)
+                    .then((result) => {
+                        // set the map's center to the result's coordinates
+                        map.setCenter(result);
+                    })
+            });
+            return cardElement;
+        }
+    }
+    const favRestaurants = [
+        {
+            name: 'Seoul Asian Market and Cafe',
+            image: 'images/seoul-asian.jpeg',
+            address: '1005 Rittiman Rd #101, San Antonio, TX 78218',
+            category: 'Korean grocery store'
+        },
+        {
+            name: 'Papi\'s Barbacoa And Bakery',
+            image: 'https://10619-2.s.cdn12.com/rests/original/110_509553853.jpg',
+            address: '3122 West Ave, San Antonio, TX 78213',
+            category: 'Mexican restaurant'
+        },
+        {
+            name: 'Torchy\'s Tacos',
+            image: 'https://cloudfront-us-east-1.images.arcpublishing.com/gmg/HIJPZBB6KZAC3A5QMQEOFIVNPA.png',
+            address: '999 E Basse Rd #183, San Antonio, TX 78209',
+            category: 'Tex-Mex Restaurant'
+        }
+    ];
+    favRestaurants.forEach(function (restaurant) {
+        geocode(restaurant.address, keys.mapbox).then(function (results) {
+            let marker = new mapboxgl.Marker()
+                .setLngLat(results)
+                .addTo(map);
+            let popup = new mapboxgl.Popup()
+                .setHTML(`
+                    <h3>${restaurant.name}</h3>
+                    <p>${restaurant.category}</p>
+                    <img src="${restaurant.image}">
+                `)
+                .addTo(map);
+            marker.setPopup(popup);
+        });
+        let card = new Location(restaurant);
+    });
+</script>
+</body>
+</html>

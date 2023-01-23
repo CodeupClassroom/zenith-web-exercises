@@ -1,0 +1,208 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+img {
+    max-width: 100%;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #fff;
+}
+/* THE PAGE WRAPPER MIMICS THE BODY, ONLY WE ARE ABLE TO DO MORE WITH IT IF NECESSARY */
+.page-wrapper {
+    display:flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url('/images/background.jpg');
+    background-size: cover;
+    background-position: center center;
+}
+.page-wrapper.all-centered {
+    align-items: center;
+    justify-content: center;
+}
+/* THE CONTAINER -- ALSO KNOWN AS A "SECTION" or "WRAPPER" -- IS A FULL WIDTH DIV THAT
+   SEPARATES SECTIONS OF A WEBSITE. IT ALIGNS IT'S CHILD(REN), THE ROW, TO ITS CENTER,
+   ALLOWING THE ROW TO PROPERLY CONTROL MAX-WIDTH ON SITE CONTENT */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    flex: auto;
+    padding: 20px;
+}
+/* THE ROW ESTABLISHES MAXIMUM WIDTH ON SITE CONTENT, AND ORGANIZES ITS CHILD(REN), THE
+   COLUMN, HORIZONTALLY. */
+.row {
+    display: flex;
+    width: 100%;
+    max-width: 900px;
+    padding: 0 20px;
+    column-gap: 20px;
+}
+/* OPTIONAL COMBO CLASS TO MAKE ROW FULL-WIDTH */
+.row.full-width {
+    max-width: unset;
+}
+/* COLUMNS WILL, BY DEFAULT, SHARE SPACE EQUALLY HORIZONTALLY WITHIN THE ROW WITH
+   THEIR SIBLINGS. CONTENT PUT INSIDE THEM WILL STACK VERTICALLY. */
+.column {
+    display:flex;
+    flex-direction: column;
+    flex: 1 0;
+    min-width: 0px;
+}
+/* OPTIONAL COMBO CLASS TO MAKE A COLUMN SHRINK INSTEAD OF GROW */
+.column.col-shrink {
+    flex: 0 1 auto;
+}
+
+.container.switch {
+    background-image: url('/images/switch-skin-nobuttons.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 900px;
+    height: 431px;
+    overflow:hidden;
+    flex:none;
+    position:absolute;
+}
+.video-wrapper {
+    position:relative;
+    overflow:hidden;
+    height: 406px;
+    width: 440px;
+    background-color:#000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color:#000;
+}
+.buttons {
+    height: 125px;
+    width: 125px;
+    position:absolute;
+}
+.buttons.left-side {
+    top: 200px;
+    left: 30px;
+}
+.buttons.right-side {
+    top: 80px;
+    right: 30px;
+}
+
+.btn-outer {
+    width: 45px;
+    height: 45px;
+    border-radius: 999px;
+    background-color: #212021;
+    border: 2px solid #000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    filter: brightness(1);
+    transition: all ease .2s;
+}
+.btn-outer:first-child {
+    position:absolute;
+    top:0;
+    left:50%;
+    transform: translateX(-50%);
+}
+.btn-outer:nth-child(2) {
+    position:absolute;
+    top:50%;
+    right:0;
+    transform: translateY(-50%);
+}
+.btn-outer:nth-child(3) {
+    position:absolute;
+    bottom:0;
+    left:50%;
+    transform: translateX(-50%);
+}
+.btn-outer:nth-child(4) {
+    position:absolute;
+    left:0;
+    top:50%;
+    transform: translateY(-50%);
+}
+.btn-inner {
+    width: 35px;
+    height: 35px;
+    border-radius: 999px;
+    background-color: #403d40;
+    border: 2px solid #000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.btn-center {
+    height: 14px;
+    width: 14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+}
+.btn-center.up {
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 14px solid #000;
+}
+.btn-center.right {
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-left: 14px solid #000;
+}
+.btn-center.down {
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 14px solid #000;
+}
+.btn-center.left {
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-right: 14px solid #000;
+}
+
+.active {
+    filter: brightness(2.5);
+}
+
+.message-box {
+    position: absolute;
+    font-weight: 600;
+    bottom: -90px;
+    width: 400px;
+    display: flex;
+    text-align: center;
+    background-color: #008000de;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 5px 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 7px -2px #000;
+    opacity:0;
+    transition:all ease .3s;
+}
+.message-box.open {
+    opacity: 1;
+    bottom: 90px;
+}

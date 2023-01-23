@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Konami Code</title>
+  <link rel="stylesheet" href="css/konami.css">
+</head>
+<body>
+<div class="page-wrapper all-centered">
+  <div class="video-wrapper">
+    <video src="images/videoplayback.mp4" id="video" autoplay muted></video>
+  </div>
+  <div class="container switch">
+    <div class="buttons left-side">
+      <div id="up" class="btn-outer">
+        <div class="btn-inner">
+          <div class="btn-center up"></div>
+        </div>
+      </div>
+      <div id="right" class="btn-outer">
+        <div class="btn-inner">
+          <div class="btn-center right"></div>
+        </div>
+      </div>
+      <div id="down" class="btn-outer">
+        <div class="btn-inner">
+          <div class="btn-center down"></div>
+        </div>
+      </div>
+      <div id="left" class="btn-outer">
+        <div class="btn-inner">
+          <div class="btn-center left"></div>
+        </div>
+      </div>
+    </div>
+    <div class="buttons right-side">
+      <div id="x" class="btn-outer">
+        <div class="btn-inner">
+          <div class="btn-center x">X</div>
+        </div>
+      </div>
+      <div id="a" class="btn-outer">
+        <div class="btn-inner">
+          <div class="btn-center a">A</div>
+        </div>
+      </div>
+      <div id="b" class="btn-outer">
+        <div class="btn-inner">
+          <div class="btn-center b">B</div>
+        </div>
+      </div>
+      <div id="y" class="btn-outer">
+        <div class="btn-inner">
+          <div class="btn-center y">Y</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  // Variable konamiCode to establish the required key sequence
+  let konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'KeyB', 'KeyA', 'Enter'];
+  // Variable to represent the current sequence typed by the user
+  let input = [];
+  $(document).ready(function(){
+    $(document).on('keydown', function(event){
+      switch(event.keyCode){
+        case 38:
+          $('#up').addClass('active');
+          break;
+        case 39:
+          $('#right').addClass('active');
+          break;
+        case 40:
+          $('#down').addClass('active');
+          break;
+        case 37:
+          $('#left').addClass('active');
+          break;
+        case 88:
+          $('#x').addClass('active');
+          break;
+        case 65:
+          $('#a').addClass('active');
+          break;
+        case 66:
+          $('#b').addClass('active');
+          break;
+        case 89:
+          $('#y').addClass('active');
+          break;
+      }
+    });
+    $('.btn-outer').on('mousedown', function () {
+      let button = $(this).attr('id');
+      let e = $.Event('keydown');
+      switch(button) {
+        case 'up':
+          e.keyCode = 38;
+          break;
+        case 'down':
+          e.keyCode = 40;
+          break;
+        case 'left':
+          e.keyCode = 37;
+          break;
+        case 'right':
+          e.keyCode = 39;
+          break;
+        case 'x':
+          e.keyCode = 88;
+          break;
+        case 'y':
+          e.keyCode = 89;
+          break;
+        case 'a':
+          e.keyCode = 65;
+          break;
+        case 'b':
+          e.keyCode = 66;
+          break;
+      }
+      $(document).trigger(e);
+    });
+    $('.btn-outer').on('mouseup', function () {
+      let button = $(this).attr('id');
+      let e = $.Event('keyup');
+      switch(button) {
+        case 'up':
+          e.keyCode = 38;
+          break;
+        case 'down':
+          e.keyCode = 40;
+          break;
+        case 'left':
+          e.keyCode = 37;
+          break;
+        case 'right':
+          e.keyCode = 39;
+          break;
+        case 'x':
+          e.keyCode = 88;
+          break;
+        case 'y':
+          e.keyCode = 89;
+          break;
+        case 'a':
+          e.keyCode = 65;
+          break;
+        case 'b':
+          e.keyCode = 66;
+          break;
+      }
+      $(document).trigger(e);
+    });
+    // Event listener to track current sequence and compare against required sequence
+    document.addEventListener('keyup', handleKeyups);
+  });
+
+  function getPosts(){
+    let posts = [];
+    fetch('URL_HERE', function(){
+
+    }).then(data){
+      posts=data;
+    }.catch(error){
+      console.log('error', error.message)
+    }
+  }
+
+  async function getPostsAsync(){
+    try {
+      let posts = await fetch('URL_HERE');
+    } catch(error) {
+
+    }
+
+  }
+
+  function handleKeyups(e){
+    //console.log(e.code);
+    // Push the pressed key into the "input" array
+    input.push(e.code);
+    // Helper function to highlight the associate key pressed on the switch
+    switchButtons(e.keyCode);
+    // Loop through the input array
+    for (let i = 0; i < input.length; i++) {
+      // if the current index of both input and konamiCode do not match
+      // reset the input array and break
+      if (input[i] !== konamiCode[i]) {
+        input = [];
+        break;
+      }
+      // if the index matches the length of konamiCode
+      // then at this point, they've correctly matched the sequence
+      if (i === konamiCode.length - 1) {
+        // console.log("You have added 30 lives!");
+        // Using a custom JavaScript Class to add a message to the screen
+        let message = new Message('30 Lives Added!');
+        // Finally, reset the input array so that they can start again
+        input = [];
+      }
+    }
+  }
+
+  // function to handle matching keyups to switch buttons
+  function switchButtons(keyCode) {
+    switch(keyCode){
+      case 38:
+        $('#up').removeClass('active');
+        break;
+      case 39:
+        $('#right').removeClass('active');
+        break;
+      case 40:
+        $('#down').removeClass('active');
+        break;
+      case 37:
+        $('#left').removeClass('active');
+        break;
+      case 88:
+        $('#x').removeClass('active');
+        break;
+      case 65:
+        $('#a').removeClass('active');
+        break;
+      case 66:
+        $('#b').removeClass('active');
+        break;
+      case 89:
+        $('#y').removeClass('active');
+        break;
+    }
+  }
+
+  // Defining the Message class and it's methods
+  class Message {
+    constructor(message){
+      this.message = message;
+      this.element = this.render();
+      setTimeout(() => {
+        this.delete();
+      }, 3000);
+    }
+    render(){
+      let html = `
+        <div class="message-box">
+            ${this.message}
+        </div>
+      `;
+      document.querySelector('.video-wrapper').insertAdjacentHTML('beforeend', html);
+      let element = document.querySelector('.message-box');
+      setTimeout(function(){
+        element.classList.add('open');
+      }, 100);
+      return element;
+    }
+    delete(){
+      this.element.classList.remove('open');
+      setTimeout(() => {
+        this.element.remove();
+      }, 300);
+    }
+  }
+</script>
+</body>
+</html>

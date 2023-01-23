@@ -103,3 +103,12 @@ button {
 .close-menu {
     cursor:pointer;
 }
+li {
+    cursor: pointer;
+}
+.input {
+    height: 40px;
+    border: 1px solid #a1a1a1;
+    border-radius: 7px;
+    padding: 0px 15px;
+}
