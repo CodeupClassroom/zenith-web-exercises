@@ -89,7 +89,11 @@
                 geocode(this.address, keys.mapbox)
                     .then((result) => {
                         // set the map's center to the result's coordinates
-                        map.setCenter(result);
+                        //map.setCenter(result);
+                        map.flyTo({
+                            center: result,
+                            essential: true
+                        })
                     })
             });
             return cardElement;
